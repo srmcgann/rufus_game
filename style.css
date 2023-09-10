@@ -6,6 +6,13 @@ html,body{
     background:#000;
 }
 
+#canvas{
+	position:absolute;
+	width:100%;
+	height:100%;
+    cursor:pointer;
+}
+
 @font-face {
     font-family: 'Square721';
 	src: url('TT0246M_.TTF') format('truetype'),
@@ -13,17 +20,3 @@ html,body{
 		 url('TT0246M_.woff') format('woff');
 }
 
-body,html{
-  background: #000;
-  margin: 0;
-  height: 100vh;
-  overflow: hidden;
-}
-#canvas{
-  background:#000;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-}
