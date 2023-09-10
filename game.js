@@ -302,8 +302,22 @@
     function frame(vars) {
 
         if(vars === undefined){
-            var vars={};
-            vars.canvas = document.querySelector("#canvas");
+		
+rsz=window.onresize=()=>{
+	var vars={};
+        vars.canvas = document.querySelector("#canvas");
+  setTimeout(()=>{
+    if(document.body.clientWidth > document.body.clientHeight*1.77777778){
+      canvas.style.height = '100vh'
+      setTimeout(()=>canvas.style.width = canvas.clientHeight*1.77777778+'px',0)
+    }else{
+      canvas.style.width = '100vw'
+      setTimeout(()=>canvas.style.height =     canvas.clientWidth/1.77777778 + 'px',0)
+    }
+  },0)
+}
+rsz()
+            
             vars.ctx = vars.canvas.getContext("2d");
             vars.canvas.width = 1366*1.6;
             vars.canvas.height = 768*1.6;
