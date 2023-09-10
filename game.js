@@ -304,7 +304,20 @@
         if(vars === undefined){
             var vars={};
             vars.canvas = document.querySelector("#canvas");
-            vars.ctx = vars.canvas.getContext("2d");
+          rsz=window.onresize=()=>{
+	setTimeout(()=>{
+    if(document.body.clientWidth > document.body.clientHeight*1.77777778){
+      vars.canvas.style.height = '100vh'
+      setTimeout(()=>vars.canvas.style.width = vars.canvas.clientHeight*1.77777778+'px',0)
+    }else{
+      vars.canvas.style.width = '100vw'
+      setTimeout(()=>vars.canvas.style.height =     vars.canvas.clientWidth/1.77777778 + 'px',0)
+    }
+  },0)
+}
+rsz()
+		
+		vars.ctx = vars.canvas.getContext("2d");
             vars.canvas.width = 1366*1.6;
             vars.canvas.height = 768*1.6;
             window.addEventListener("resize", function(){
