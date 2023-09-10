@@ -308,11 +308,11 @@ rsz=window.onresize=()=>{
         vars.canvas = document.querySelector("#canvas");
   setTimeout(()=>{
     if(document.body.clientWidth > document.body.clientHeight*1.77777778){
-      canvas.style.height = '100vh'
-      setTimeout(()=>canvas.style.width = canvas.clientHeight*1.77777778+'px',0)
+      vars.canvas.style.height = '100vh'
+      setTimeout(()=>vars.canvas.style.width = vars.canvas.clientHeight*1.77777778+'px',0)
     }else{
-      canvas.style.width = '100vw'
-      setTimeout(()=>canvas.style.height =     canvas.clientWidth/1.77777778 + 'px',0)
+      vars.canvas.style.width = '100vw'
+      setTimeout(()=>vars.canvas.style.height =     vars.canvas.clientWidth/1.77777778 + 'px',0)
     }
   },0)
 }
